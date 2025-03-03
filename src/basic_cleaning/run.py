@@ -11,7 +11,6 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
-# DO NOT MODIFY
 def go(args):
 
     run = wandb.init(job_type="basic_cleaning")
@@ -35,18 +34,16 @@ def go(args):
     # Save the cleaned file
     df.to_csv('clean_sample.csv',index=False)
 
-    # log the new data.
+    # Log the new data.
     artifact = wandb.Artifact(
-     args.output_artifact,
-     type=args.output_type,
-     description=args.output_description,
- )
+        args.output_artifact,
+        type=args.output_type,
+        description=args.output_description,
+    )
     artifact.add_file("clean_sample.csv")
     run.log_artifact(artifact)
 
 
-# TODO: In the code below, fill in the data type for each argumemt. The data type should be str, float or int. 
-# TODO: In the code below, fill in a description for each argument. The description should be a string.
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="A very basic data cleaning")
@@ -92,7 +89,6 @@ if __name__ == "__main__":
         help = 'Maximum house price to be considered',
         required = True
     )
-
 
     args = parser.parse_args()
 
