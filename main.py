@@ -12,10 +12,9 @@ _steps = [
     "data_check",
     "data_split",
     "train_random_forest",
-    # NOTE: We do not include this in the steps so it is not run by mistake.
+    # NOTE: "test_regression_model" is not included in the steps so it is not run by mistake.
     # You first need to promote a model export to "prod" before you can run this,
     # then you need to run this step explicitly
-    #    "test_regression_model"
 ]
 
 

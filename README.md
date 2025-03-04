@@ -1,24 +1,20 @@
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
-You are working for a property management company renting rooms and properties for short periods of 
-time on various rental platforms. You need to estimate the typical price for a given property based 
-on the price of similar properties. Your company receives new data in bulk every week. The model needs 
-to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
-
-In this project you will build such a pipeline.
-
-**W&B link:** [W&B](https://wandb.ai/nganvu2601-western-governors-university/nyc_airbnb?nw=nwusernganvu2601)
-
-**GitHub link:** [GitHub](https://github.com/nvu01/Project-Build-an-ML-Pipeline-Starter)
+This project builds an end-to-end machine learning pipeline that estimates the typical price for a given property based on the prices of similar properties in New York City. The project is designed for a property management company that rents rooms and properties on various rental platforms. The company receives new data on a weekly basis, which includes property details, their rental prices, and other relevant features. The model needs to be retrained with this fresh data every week to ensure accurate pricing estimates. This project focuses on automating this process with a reusable machine learning pipeline.
 
 ## Table of contents
 
 - [Preliminary steps](#preliminary-steps)
-  * [Fork the Starter Kit](#fork-the-starter-kit)
-  * [Create environment](#create-environment)
-  * [Get API key for Weights and Biases](#get-api-key-for-weights-and-biases)
-  * [The configuration](#the-configuration)
-  * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
-  * [Pre-existing components](#pre-existing-components)
+ * [Supported Operating Systems](#supported-operating-systems)
+ * [Python Requirement](#python-requirement)
+ * [The Starter Kit](#the-starter-kit)
+ * [Create environment](#create-environment)
+ * [Get API key for Weights and Biases](#get-api-key-for-weights-and-biases)
+ * [The configuration](#the-configuration)
+ * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
+ * [Pre-existing components](#pre-existing-components)
+- [In case of errors](#in-case-of-errors)
+ * [Environments](#environments)
+ * [MLflow & Wandb](#mlflow--wandb)
 
 ## Preliminary steps
 
@@ -36,22 +32,8 @@ Please ensure you are using one of the supported OS versions to avoid compatibil
 
 This project requires **Python 3.10**. Please ensure that you have Python 3.10 installed and set as the default version in your environment to avoid any runtime issues.
 
-### Fork the Starter kit
-Go to [https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter](https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter)
-and click on `Fork` in the upper right corner. This will create a fork in your Github account, i.e., a copy of the
-repository that is under your control. Now clone the repository locally so you can start working on it:
-
-```
-git clone https://github.com/[your github username]/Project-Build-an-ML-Pipeline-Starter.git
-```
-
-and go into the repository:
-
-```
-cd Project-Build-an-ML-Pipeline-Starter
-```
-Commit and push to the repository often while you make progress towards the solution. Remember 
-to add meaningful commit messages.
+### The Starter kit
+This project is forked from the [Udacity Starter Repository](https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter), you can start by forking it to your GitHub account
 
 ### Create environment
 Make sure to have conda installed and ready, then create a new environment using the ``environment.yaml``
@@ -63,7 +45,10 @@ file provided in the root of the repository and activate it:
 ```
 
 ### Get API key for Weights and Biases
-Let's make sure we are logged in to Weights & Biases. Get your API key from W&B by going to 
+**My W&B link:** [W&B](https://wandb.ai/nganvu2601-western-governors-university/nyc_airbnb?nw=nwusernganvu2601)
+
+**How to setup Weights and Biases:**  
+Let's make sure you are logged in to Weights & Biases. Get your API key from W&B by going to 
 [https://wandb.ai/authorize](https://wandb.ai/authorize) and click on the + icon (copy to clipboard), 
 then paste your key into this command:
 
@@ -121,7 +106,7 @@ modeling -> random_forest -> n_estimators to 10 and etl->min_price to 50:
 ```
 
 ### Pre-existing components
-In order to simulate a real-world situation, we are providing you with some pre-implemented
+In order to simulate a real-world situation, you are provided with some pre-implemented
 re-usable components. While you have a copy in your fork, you will be using them from the original
 repository by accessing them through their GitHub link, like:
 
@@ -136,15 +121,15 @@ _ = mlflow.run(
                     "artifact_name": "sample.csv",
                     "artifact_type": "raw_data",
                     "artifact_description": "Raw file as downloaded"
-                },
-            )
+                }
+              )
 ```
 where `config['main']['components_repository']` is set to 
-[https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter/tree/main/components](https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter/tree/main/components).
+[https://github.com/nvu01/Project-Build-an-ML-Pipeline-Starter/tree/main/components](https://github.com/nvu01/Project-Build-an-ML-Pipeline-Starter/tree/main/components).
 You can see the parameters that they require by looking into their `MLproject` file:
 
-- `get_data`: downloads the data. [MLproject](https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter/blob/main/components/get_data/MLproject)
-- `train_val_test_split`: segrgate the data (splits the data) [MLproject](https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter/blob/main/components/train_val_test_split/MLproject)
+- `get_data`: downloads the data. [MLproject](https://github.com/nvu01/Project-Build-an-ML-Pipeline-Starter/blob/main/components/get_data/MLproject)
+- `train_val_test_split`: segregate the data (splits the data) [MLproject](https://github.com/nvu01/Project-Build-an-ML-Pipeline-Starter/blob/main/components/train_val_test_split/MLproject)
 
 ## In case of errors
 
