@@ -4,17 +4,17 @@ This project builds an end-to-end machine learning pipeline that estimates the t
 ## Table of contents
 
 - [Preliminary steps](#preliminary-steps)
- * [Supported Operating Systems](#supported-operating-systems)
- * [Python Requirement](#python-requirement)
- * [The Starter Kit](#the-starter-kit)
- * [Create environment](#create-environment)
- * [Get API key for Weights and Biases](#get-api-key-for-weights-and-biases)
- * [The configuration](#the-configuration)
- * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
- * [Pre-existing components](#pre-existing-components)
+  * [Supported Operating Systems](#supported-operating-systems)
+  * [Python Requirement](#python-requirement)
+  * [The Starter Kit](#the-starter-kit)
+  * [Create Environment](#create-environment)
+  * [Get API key for Weights and Biases](#get-api-key-for-weights-and-biases)
+  * [The configuration](#the-configuration)
+  * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
+  * [Pre-existing components](#pre-existing-components)
 - [In case of errors](#in-case-of-errors)
- * [Environments](#environments)
- * [MLflow & Wandb](#mlflow--wandb)
+   * [Environments](#environments)
+   * [MLflow & Wandb](#mlflow--wandb)
 
 ## Preliminary steps
 
@@ -35,7 +35,7 @@ This project requires **Python 3.10**. Please ensure that you have Python 3.10 i
 ### The Starter kit
 This project is forked from the [Udacity Starter Repository](https://github.com/udacity/Project-Build-an-ML-Pipeline-Starter), you can start by forking it to your GitHub account
 
-### Create environment
+### Create Environment
 Make sure to have conda installed and ready, then create a new environment using the ``environment.yaml``
 file provided in the root of the repository and activate it:
 
